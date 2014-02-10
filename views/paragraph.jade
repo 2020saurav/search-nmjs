@@ -1,0 +1,15 @@
+title Input | Teach For India
+link(rel='stylesheet', href='stylesheets/bootstrap.min.css', type='text/css')
+form(class='bs-example bs-example-form', method='post', action ='/addcontent')
+	div(class='col-lg-6' id = 'parabox')
+		h2(align='center') Add a paragraph to insert in database
+		br
+		input(type='text' name = 'title' class='form-control' placeholder="Add a title for the paragraph")
+		br
+		textarea(rows="10" name = 'content' class="form-control" placeholder="Add the content here")
+		br
+		button(class='btn btn-default' type = 'submit') Submit
+
+div(id = 'bottombutton2')
+		a(href="/search") 
+			button(class='btn btn-default' type = 'submit') Search in Database

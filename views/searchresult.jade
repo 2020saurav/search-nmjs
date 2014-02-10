@@ -1,0 +1,37 @@
+-query= q; // to display in search box
+
+	
+title Search | Teach For India
+link(rel='stylesheet', href='stylesheets/bootstrap.min.css', type='text/css')
+div
+	form(class='bs-example bs-example-form', action = '/searchresult', method = 'get')
+		div(class='col-lg-6', id = 'searchbox1')
+			h1(align='center').
+				Teach for India Search
+			br
+			div(class="input-group")
+				input(type='text', class='form-control', name = 'q', value = query)
+				span(class='input-group-btn')
+					button(class='btn btn-default' type = 'submit') Search
+div(id = 'searchres')
+	-var results = srchlist.results
+	-var len = results.length
+	// count of array length in json response
+	
+	if (len ==0)
+		b &emsp; <br/> &emsp; &emsp; Please try something else
+	else
+		b &emsp; <br/> &emsp; &emsp; Showing #{len} results
+	br
+	br
+	-for result in results
+		div(class='alert alert-info')
+			p
+				b #{result.obj.title}
+			p	#{result.obj.content}
+	br
+	br
+	h3
+	div(id = 'bottombutton')
+		a(href="/paragraph") 
+			button(class='btn btn-default' type = 'submit') Add Content to Database
